@@ -147,7 +147,18 @@ Donde:
     \text{Valor entregar / cancelar} = \text{Valor Nominal} + \text{Suma de} \\
     \text{los costes finales} - \text{Retención} \\
     TCEA = \frac{\text{Valor Entregado}}{\text{Valor Recibido}}^\frac{360}{td} - 1 \\
+    Ic = \text{Valor Nominal} \cdot [(1 + TEP1)^\frac{td}{n1} - 1] \\
+    Ic = \text{Valor Nominal} \cdot [(1 + \frac{TN}{m})^n - 1] \\
+    Im = \text{Valor Nominal} \cdot [(1 + TEPmora)^\frac{td}{n1} - 1] \\
+    Im = \text{Valor Nominal} \cdot [(1 + \frac{TN}{m})^n - 1] \\
+    \text{Valor Entregado} = \text{Valor Nominal} + \\
+    \text{Suma de Costes Finales} - \text{Retención} + \\
+    \text{Interés compensatorio} + \text{Interés moratorio} + \\
+    \text{Suma de Costes por la mora} \\
+    TCEAm = (\frac{\text{Valor entregado mora}}{\text{Valor Recibido}})^{\frac{360}{td + tm}} - 1 \\
 \end{gather*}
+
+\newpage
 
 Donde:
 
@@ -160,6 +171,105 @@ Donde:
     TEtd = \text{Tasa Efectiva en el período de tiempo} \\
     \text{transcurrido} \\
     TCEA = \text{Tasa de Coste Efectivo Anual} \\
+    Ic = \text{Intereses compensatorios} \\
+    In = \text{Intereses moratorios} \\
+    TCEAm = \text{Tasa de Coste Efectivo Anual de la} \\
+    \text{Operación incluyendo mora} \\
 \end{gather*}
+
+\section{Anualidades}
+
+\subsection{Fórmula para anualidad simple vencida}
+
+\begin{gather*}
+    R = C \cdot (\frac{i \cdot (1 + i)^n}{(1 + i)^n - 1}) \\
+    R = S \cdot (\frac{i}{(1 + i)^n - 1}) \\
+\end{gather*}
+
+\subsection{Fórmula para anualidad simple adelantada}
+
+$$ Ra = C \cdot (\frac{i \cdot (1 + i)^{n - 1}}{(1 + i)^n - 1}) $$
+
+\subsection{Factores financieros}
+
+\subsubsection{Factor de capitalización de la serie (FCS)}
+
+$$ FCS = [\frac{(1 + i)^n - 1}{i}] $$
+
+\subsubsection{Factor de déposito al fondo de amortización (FDFA)}
+
+$$ FDFA = \frac{i}{(1 + i)^n - 1} $$
+
+\subsubsection{Factor de recuperación del capital (FRC)}
+
+$$ FRC = [\frac{i \cdot (1 + i)^n}{(1 + i)^n - 1}] $$
+
+\subsubsection{Factor de recuperación del capital (FAS)}
+
+$$ FAS = [\frac{(1 + i)^n - 1}{i \cdot (1 + i)^n}] $$
+
+\section{Indicadores de Rentabilidad}
+
+\subsection{Valor Actual Neto (VAN)}
+
+\begin{gather*}
+    VA = \sum_{t = 1}^{n} \frac{FC_t}{(1 + COK)^t} \\
+    VAN = - \text{Inversión} + VA \\
+    VAN = - \text{Inversión} + \sum_{t = 1}^{n} \frac{FC_t}{(1 + COK)^t} \\
+\end{gather*}
+
+Donde:
+
+\begin{gather*}
+    VA = \text{Valor Actual} \\
+    FC_t = \text{Flujo de Caja en el período t} \\
+    COK = \text{Costo de Oportunidad del Capital} \\
+    n = \text{Número de períodos} \\
+\end{gather*}
+
+\subsubsection{Criterios de Aceptación o Rechazo}
+
+\begin{gather*}
+    VAN > 0 \rightarrow \text{Aceptar} \\
+    VAN < 0 \rightarrow \text{Rechazar} \\
+    VAN = 0 \rightarrow \text{Indiferente} \\
+\end{gather*}
+
+\subsection{Tasa de Interna de Retorno (TIR)}
+
+\subsubsection{Criterios}
+
+\begin{gather*}
+    TIR > COK \rightarrow \text{Vale la pena} \\
+    TIR < COK \rightarrow \text{No vale la pena} \\
+    TIR = COK \rightarrow \text{Indiferente} \\
+\end{gather*}
+
+\subsection{Índice Beneficio / Costo}
+
+\begin{gather*}
+    B / C = \frac{VA}{\text{Inversión}} \\
+    B / C = \frac{\sum_{t = 1}^{n} \frac{FC_t}{(1 + COK)^t}}{\text{Inversión}} \\
+\end{gather*}
+
+\subsubsection{Criterios}
+
+\begin{gather*}
+    B / C > 1 \rightarrow \text{Aceptar} \\
+    B / C < 1 \rightarrow \text{Rechazar} \\
+    B / C = 1 \rightarrow \text{Indiferente} \\
+\end{gather*}
+
+\subsection{Valor Actual de Costos (VAC)}
+
+$$ VAC = - \text{Inversión} + \sum_{t = 1}^{n} \frac{FC_t}{(1 + COK)^t} $$
+
+\subsection{Fórmula del CAUE (Teoría de anualidades)}
+
+$$ R = C \cdot (\frac{i \cdot (1 + i)^n}{(1 + i)^n - 1}) $$
+
+\subsection{Costo Capitalizado (CC)}
+
+$$ CC = \frac{R}{TEP} $$
 
 \end{document}
